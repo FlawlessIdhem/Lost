@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOST</title>
+    <link rel="stylesheet" href="LOST.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><h2><a href="#home">LOST</a></h2></div>
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">&#9776;</label>
+        
+            <ul class="nav-left">
+                <li><a href="#about" id="header" class="btn">Overview</a></li>
+                <li><a href="#cast" id="header1" class="btn">Cast</a></li>
+                <li><a href="#news" id="header2" class="btn">News</a></li>
+                <li><a href="#contact" id="header3" class="btn">Contact</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="#free-trial" id="header4" class="free" class="btn">Free Trial</a></li>
+                <li><a href="#free-trial" id="header5" class="buy" class="btn">Buy Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p id="hero_p1" class="p1">Now available for PS5 and</p>
+            <p id="hero_p2" class="p2">Xbox Series X|S</p>
+            <p id="hero_p3" class="p3">Embrace the gritty experience of an improvised modern-day</p>
+            <p id="hero_p4" class="p4">guerrilla and take down the Dictator.</p>
+            <a href="https://www.youtube.com/watch?v=DFze21M_O6s&ab_channel=IGN" class="btn" id="watch_trailer">WATCH THE TRAILER</a>
+            <button href="#play" class="btn" id="play_now">PLAY NOW</button>
+        </div>
+        <div class="login-form">
+            <h2 id="login">Login</h2>
+            <form>
+                <div class="input-field">
+                    <input type="text" required>
+                    <label id="enter_username">Enter your username</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" required>
+                    <label id="enter_password">Enter your password</label>
+                </div>
+                <div class="forget">
+                    <label for="remember">
+                        <input type="checkbox" id="remember">
+                        <p id="remember_me">Remember me</p>
+                    </label>
+                    <a href="#" id="forgot_password">Forgot password?</a>
+                </div>
+                <button type="submit" id="log_in">Log in</button>
+
+                <div class="divider"> <hr> or <hr></div>
+                <button class="google-btn"><i class="fa-brands fa-google"></i> Log in with Google</button>
+                <button class="facebook-btn"><i class="fa-brands fa-facebook-f"></i> Log in with Facebook</button>
+                <div class="register">
+                    <p id="register">
+                        Don't have an account?
+                        <a href="#">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="box1p1"><h1 id="trust_leader">TRUST YOUR LEADER</h1></div>
+        <p id="about_p1" class="about-p1">As the leaders of Yara, my son Diego and I will restore</p>
+        <p id="about_p2" class="about-p2">this nation back to its former glory.</p>
+    </section>
+
+    <section id="page3" class="page3">
+        <div class="box2p3"><h1 id="beware_dictator">BEWARE OF THE DICTATOR</h1></div>
+        <p id="page3_p1" class="page3-p1">Antón will even sacrifice his own people to forge his paradise,</p>
+        <p id="page3_p2" class="page3-p2">DO NOT TRUST HIM.</p>
+    </section>
+
+    <section id="page4" class="page4">
+        <div class="box1p4"><h1 id="guerrilla_destroy">GUERRILLA FIGHTERS DESTROY</h1></div>
+        <div class="box2p4"><h1 id="capitol">CAPITOL</h1></div>
+        <p id="traitors">Dani Rojas and his band of guerillas are traitors to our great country</p>
+    </section>
+
+    <section id="page5" class="page5">
+        <div class="box1p5"><h1 id="guerrilla_defend">GUERRILLA FIGHTERS DEFEND</h1></div>
+        <div class="box2p5"><h1 id="freedom">FREEDOM</h1></div>
+        <p id="fight_for_freedom">We fight to liberate our nation from the oppression of a ruthless tyrant.</p>
+    </section>
+
+    <section id="cast" class="characters">
+        <h2 class="title" id="main_characters">MAIN CHARACTERS</h2>
+        <p class="description" id="description">
+            From forced Yaran army recruit to guerrilla leader, become Dani Rojas and fight a corrupt regime to restore the island nation of Yara.
+            Meet a diverse cast of characters along your journey to take down Antón Castillo.
+        </p>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="dani-female.PNG" alt="Dani (Female)">
+                    </div>
+                    <div class="card-back">
+                        <p class="quote" id="cardtitle1">"A guerrilla is never alone."</p>
+                        <p class="description" id="card1">Dani Rojas (female), A former Yaran soldier turned guerrilla fighter. Dani takes up arms against the dictatorship and leads the revolution to free Yara.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="dani-male.PNG" alt="Dani (Male)">
+                    </div>
+                    <div class="card-back">
+                        <p class="quote" id="cardtitle2">"A guerrilla is never alone."</p>
+                        <p class="description" id="card2">Dani Rojas (male), a former Yaran soldier, fights for freedom against the ruthless dictatorship of Antón Castillo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="anton.PNG" alt="Antón Castillo">
+                    </div>
+                    <div class="card-back">
+                        <p class="quote" id="cardtitle3">"True Yaran power comes from control."</p>
+                        <p class="description" id="card3">The ruthless dictator of Yara. He seeks to restore his nation to its former glory, but his methods involve oppression, violence, and control. He grooms his son, Diego, to follow in his footsteps.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="diego.PNG" alt="Diego Castillo">
+                    </div>
+                    <div class="card-back">
+                        <p class="quote" id="cardtitle4">"Do I really have a choice?"</p>
+                        <p class="description" id="card4">The young son of Antón Castillo, torn between loyalty to his father and the suffering of the people. He struggles with the expectations placed upon him.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="juan.PNG" alt="juan">
+                    </div>
+                    <div class="card-back">
+                        <p class="quote" id="cardtitle5">"Revolutions are won with bullets, not speeches."</p>
+                        <p class="description" id="card5">A legendary spy and weapons expert. Juan trains Dani in guerrilla tactics and provides weapons and strategy to take down Antón Castillo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="free-trial" class="purchase">
+        <!-- Free Trial Section -->
+        <div class="section">
+            <h1 class="section-title" id="free_trial">FREE TRIAL</h1>
+            <div class="game-box">
+                <div class="game-image">
+                    <img src="free2.avif" alt="Lost Free Trial">
+                </div>
+                <div class="game-content">
+                    <h2 id="free_trial_version">Lost Free Trial Version</h2>
+                    <div class="platforms">
+                        <span>PS5</span>
+                        <span>Xbox Series X|S</span>
+                    </div>
+                    <div class="dropdown">
+                        <input type="checkbox" id="free-trial-dropdown">
+                        <label for="free-trial-dropdown" id="select_platform" class="select-btn">SELECT PLATFORM</label>
+                        <div class="dropdown-menu">
+                            <a href="#" class="play">PS5</a>
+                            <a href="#" class="xbox">Xbox Series X|S</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Buy Now Section -->
+        <div class="section">
+            <h1 class="section-title" id="buy_now">BUY NOW</h1>
+            <div class="game-box">
+                <div class="game-image">
+                    <img src="buy2.jpg" alt="Lost Vault Edition">
+                </div>
+                <div class="game-content">
+                    <h2 id="vault_edition">Lost Vault Edition</h2>
+                    <div class="platforms">
+                        <span>PS5</span>
+                        <span>PS4</span>
+                        <span>Xbox Series X|S</span>
+                        <span>PC</span>
+                    </div>
+                    <div class="dropdown">
+                        <input type="checkbox" id="vault-dropdown">
+                        <label for="vault-dropdown" id="select_platform1" class="select-btn">SELECT PLATFORM</label>
+                        <div class="dropdown-menu">
+                            <a href="#" class="play">PS5</a>
+                            <a href="#" class="play">PS4</a>
+                            <a href="#" class="xbox">Xbox Series X|S</a>
+                            <a href="#" class="pc">PC</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="news" class="latest-news-container">
+        <h2 class="latest-news-title" id="latest_game_news">LATEST GAME NEWS</h2>
+
+        <div class="news-section">
+            <div class="news-item">
+                <h3 id="celebrate_anniversary">CELEBRATE LOST 1ST ANNIVERSARY WITH THE LATEST RELEASES</h3>
+                <p class="date" id="date">20 March 2024</p>
+                <p class="read-time" id="read_time">3 Min Read</p>
+                <p id="news_item_1">If you enjoyed playing Lost, then brace yourself because there's more to explore thanks to the slate of transmedia products developed around the franchise.</p>
+            </div>
+
+            <div class="news-item">
+                <h3 id="take_shot">TAKE YOUR BEST SHOT FOR UBISOFT'S PHOTOMODE CONTEST 2024</h3>
+                <p class="date" id="date_2">14 January 2025</p>
+                <p class="read-time" id="read_time1">3 Min Read</p>
+                <p id="news_item_2">Submit your best in-game photo for a chance to win a Ubisoft Montreal studio tour, a one-year Ubisoft+ Premium subscription, and more.</p>
+            </div>
+
+            <div class="news-item">
+                <h3 id="free_trial_weekend">LOST - FREE TRIAL WEEKEND AVAILABLE NOW</h3>
+                <p class="date" id="date_3">25 January 2025</p>
+                <p class="read-time" id="read_time_2">2 Min Read</p>
+                <p id="news_item_3">Don't miss this chance to liberate Yara from an oppressive dictator, take advantage of major discounts, and snag an in-game exclusive for playing co-op.</p>
+            </div>
+        </div>
+
+        <div class="read-more-container">
+            <button class="read-more-btn" id="read_more">READ MORE</button>
+        </div>
+    </div>
+
+<footer>
+    <div id="contact" class="footer-container">
+            <div class="footer-top">
+                <h1 class="footer-logo">LOST</h1>
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitch"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+             </div>
+
+        <div class="footer-links">
+            <div class="column">
+                <h2 id="learn_more">Learn more</h2>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">End User License Agreement</a></li>
+                    <li><a href="#">L-cards</a></li>
+                    <li><a href="#">Cancel or refund the purchase</a></li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <h2 id="partners">Partners</h2>
+                <ul>
+                    <li><a href="#">Geforce</a></li>
+                    <li><a href="#">AMD</a></li>
+                    <li><a href="#">MSI</a></li>
+                    <li><a href="#">ASUS</a></li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <h2 id="assistance">Assistance</h2>
+                <ul>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Community Rules</a></li>
+                    <li><a href="#">Cosplay</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-platforms">
+            <div class="platform-list">
+                <span>PS5</span>
+                <span>PS4</span>
+                <span>Xbox Series X|S</span>
+                <span>PC</span>
+            </div>
+            <div class="mature-sign">
+                <img src="mature.PNG" alt="Mature 17+">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lost. All rights reserved.</p>
+            <div class="language-selector">
+            <select>
+                <option value="en">us English</option>
+                <option value="ar">🇦🇪 Arabic</option>
+                <option value="de">🇩🇪 German</option>
+                <option value="fr">🇫🇷 Francais</option>
+            </select>
+        </div>
+        </div>
+    </div>
+</footer>
+<script src="LOST.js"></script>
+</body>
+</html>

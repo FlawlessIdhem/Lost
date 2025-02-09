@@ -1,0 +1,978 @@
+@import url('https://use.fontawesome.com/releases/v6.5.1/css/all.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000000;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.853);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    height: 68px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 100px;
+}
+.logo a {
+    color: white;
+    text-decoration: none;
+    transition: color 1s;
+}   
+nav {
+    display: flex;
+    width: 100%;  
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    
+}
+.nav-left {
+    position: relative;
+    margin: auto;
+}
+.nav-left li a {
+    color: beige;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0px;
+    padding: 25px 50px;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+}
+.nav-left li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+.nav-left li a:hover::before {
+    transform: translateY(0); 
+}
+.nav-right {      
+    display: flex; /*!!! */
+    align-items: center; /*!!! */
+}
+.nav-right li a {
+    
+    color: rgb(0, 0, 0);
+    padding: 22px 30px; 
+    text-decoration: none;
+    border-radius: 0px;
+    font-family: Impact, fantasy;
+    font-size: larger;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.buy{
+    margin-right: -20px;
+    background-color: orange;
+}
+.free{
+    background-color: rgb(195, 38, 38);
+}
+.nav-right li a:hover {
+    transform: scale(1.05); /*!!! */
+    background-color: whitesmoke;
+}
+
+.hero {
+    background-image: url('background.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    font-weight: normal;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+@keyframes move1 {
+    from {left: -800px;}
+    to { right: 10%;}
+}
+@keyframes move2 {
+    from {margin-left: -800px;}
+    to {margin-left: 0px;}
+}
+.p1,.p2,.p3,.p4 {
+    animation: move1 2s;
+    position: absolute;
+    font-family: cursive;   
+    left: 3%;
+}
+.p1 {
+    font-weight: bold;
+    top: 34%;
+    font-size: 40px;
+    
+}
+.p2 {
+    font-weight: bold;
+    top: 41%;
+    font-size: 40px;
+}
+.p3{
+    top: 51%;
+    font-family: OCR A Std, monospace;
+}
+.p4{
+    top: 54%;
+    font-family: OCR A Std, monospace; 
+}
+.hero-content a {
+    padding: 27px 80px;
+    background-color: transparent;
+    border: 1px solid;
+    font-size: 20px;
+    position: absolute;
+    left: 3%;
+    top: 63%;
+    font-family: Impact, fantasy;
+    animation: move2 2s;
+}
+.hero-content button {
+    padding: 27px 60px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 1px solid;
+    font-family: Impact, fantasy;
+    position: absolute;
+    left: 24%;
+    top: 63%;
+    animation: move2 2s;
+}
+.hero-content a:hover{
+    background-color: rgb(195, 38, 38);
+    color: black;
+    border: 1px solid rgb(195, 38, 38);
+}
+.hero-content button:hover {
+    background-color: orange;
+    color: black;
+    border: 1px solid orange   ;
+}
+.btn {
+    background-color: rgb(195, 38, 38);
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.login-form {
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    margin-right: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 60px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.login-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+.input-field {
+    position: relative;
+    border-bottom: 2px solid white;
+    margin: 15px 0;
+}
+.input-field label {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+    font-family: cursive;
+    font-weight: bold;
+}
+.input-field input {
+    width: 100%;
+    height: 40px;
+    color: white;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    border: none;
+}
+.input-field input:focus~label,
+.input-field input:valid~label {
+font-size: 0.8rem;
+top: 10px;
+transform: translateY(-120%);
+}
+.forget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 35px 0;
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+}
+.forget a:hover {
+    color: black;
+}
+#remember {
+    accent-color: darkred;
+}
+.forget label {
+    display: flex;
+    align-items: center;
+}
+.forget label p {
+    margin-left: 8px;
+}
+.login-form a {
+    text-decoration: underline;
+    color: white;
+}
+.login-form button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    font-weight: 600;
+    font-size: 18px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+}
+
+.login-form button:hover {
+    background-color: #a61e2e;
+    transform: scale(1.05);
+}
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-family: cursive;
+    font-weight: bold;
+}
+.divider hr {
+    flex: 1;
+    height: 2px;
+    background: white;
+    margin: 20px 10px;
+}
+.google-btn{
+    margin-bottom: 10px;
+}
+.register {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+}
+.register a:hover {
+    color: black;
+}
+.about, .page3, .page4, .page5 {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-width: 100%;
+    padding: 100px 20px;
+    height: 100vh;
+}
+.about {
+    background-image: url('bnormal.avif');
+}
+.page3 {
+    background-image: url('bfire.avif');
+}
+.page4 {
+    background-image: url('b2normal.avif');
+}
+.page5 {
+    background-image: url('b2fire.avif');
+}
+.box1p1, .box2p3, .box1p4, .box2p4, .box1p5, .box2p5 {
+    border:1px solid orange;
+    background-color: orange;
+    height: 60px;
+    position: relative;
+    top: 20vh;
+}
+.box1p1 {
+    width: 430px;
+    left: 108vh;
+}
+.box2p3 {
+    width: 530px;
+    left: 108vh;
+}
+.box1p4 {
+    width: 610px;
+    left: 8vh;
+    margin-bottom: 10px;
+}
+.box2p4 {
+    width: 180px;
+    left: 10vh;
+}
+
+.box1p5 {
+    width: 580px;
+    left: 8vh;
+    margin-bottom: 10px;
+}
+.box2p5 {
+    width: 200px;
+    left: 10vh;
+}
+.about h1, .page3 h1, .page4 h1, .page5 h1 {
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+}
+.about-p1, .page3-p1, .about-p2, .page3-p2, .page4 p, .page5 p {
+    font-family: OCR A Std, monospace;
+    color: beige;
+    font-size: 20px;
+    position: absolute;
+}
+.about-p1, .page3-p1 {
+    left: 111vh;
+    margin-top: 180px;
+}
+.about-p2, .page3-p2 {
+    left: 111vh;
+    margin-top: 205px;
+}
+.page4 p, .page5 p {
+    left: 13vh;
+    margin-top: 170px;    
+}
+.characters {
+    padding: 100px 20px;
+    height: 120vh;
+    background-image: url(background2.avif);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-width: 100%;
+    text-align: center; 
+}
+.title {
+    font-size: 3.5rem;
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    display: inline-block;
+    margin-top: -30px;
+
+}
+
+.description {
+    margin: 30px auto 40px;
+    font-family: OCR A Std, monospace;
+    color: beige;
+    font-size: 19px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    
+    gap: 20px;
+}
+
+.card {
+    width: 290px;
+    height: 490px;
+    perspective: 1000px;  
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.5s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border: 2px solid white;
+    
+    overflow: hidden;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background: url(wood2.jpg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+.card-back .quote {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: darkred;
+    max-width: 90%;
+}
+.card-back .description {
+    max-width: 90%;
+}
+.purchase {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    background: url(wood1.webp);
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+}
+
+/* Section Title */
+.section-title {
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    margin-top: 80px;
+}
+
+/* Game Box */
+.game-box {
+    width: 500px;
+    height: 600px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+/* Game Image */
+.game-image {
+    height: 300px;
+
+}
+.game-image img {
+    width: 100%;
+    max-height: 100%;
+    
+}
+/* Game Content */
+.game-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* Title */
+h2 {
+    font-size: 40px;
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+    text-align: left;
+    color: white;
+}
+
+/* Platforms */
+.platforms {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    margin-top: 20px;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Hide Checkbox */
+.dropdown input {
+    display: none;
+}
+
+/* Select Button */
+.select-btn {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 0px;
+    font-size: 16px;
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.select-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    width: 100%;
+    background-color: #030202;
+    border: 2px solid white;
+    border-radius: 5px; 
+    display: none;
+    text-align: center;
+}
+
+.dropdown input:checked + .select-btn + .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-family: cursive;
+    
+}
+.dropdown-menu .play:hover {
+    background-color: rgb(0, 98, 255);
+    color: white;
+}
+.dropdown-menu .xbox:hover {
+    background-color: rgb(2, 123, 0);
+    color: white;
+}
+.dropdown-menu .pc:hover {
+    background-color: white;
+    color: black;
+}
+.latest-news-container {
+    background: url(wood1.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0px;
+    height: 100vh;
+}
+
+
+.latest-news-title {
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+    font-size: 50px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    max-width: 78%;
+    margin: 70px 170px;
+}
+
+.news-section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: auto;
+}
+.news-item {
+    width: 30%;
+    padding: 20px;
+}
+
+.news-item h3 {
+    font-family: Impact, fantasy;
+    font-weight: lighter;
+    font-size: 22px;
+    color: orange;
+    margin-bottom: 30px;
+}
+
+.news-item .date,
+.news-item .read-time {
+    color: beige;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.news-item .date {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 5px;
+}
+
+.news-item p {
+    font-size: 15px;
+    font-family: OCR A Std, monospace;
+    font-weight: bold;
+    color: beige;
+}
+/* ALL NEWS Button */
+.read-more-container {
+    text-align: center;
+}
+
+.read-more-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 30px;
+    font-family: Impact, fantasy;   
+    font-weight: lighter;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: rgb(195, 38, 38);
+    color: black;
+    border-color: rgb(195, 38, 38);
+    transform: scale(1.05);
+}
+footer {
+    background-color: #181818;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 40px;
+    font-weight: lighter;
+    font-family: fantasy;
+}
+.social-icons ul {
+    display: flex;
+    gap: 10px;
+}
+.social-icons li {
+    list-style: none;
+    --color :#ffffff;
+}
+.social-icons a {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    
+    border-radius: 15px;
+    box-shadow: -2px -2px -3px #ffffff0d,
+                3px 3px 3px #00000033;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+.fa-brands {
+    font-size: 20px;
+    color: #555;
+}
+.social-icons a:hover .fa-brands {
+    color: var(--color);
+    text-shadow: 0 0 30px var(--color);
+}
+li:nth-child(2) {
+    --color: #ff006a;
+}
+li:nth-child(3) {
+    --color: #6400d6;
+}
+li:nth-child(4) {
+    --color: #0055ff;
+}
+li:nth-child(5) {
+    --color: #c70000;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.column h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: fantasy;
+    font-weight: lighter;
+}
+
+.column ul {
+    list-style: none;
+}
+
+.column ul li {
+    margin-bottom: 8px;
+}
+
+.column ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: OCR A Std, monospace;
+}
+.column ul li a:hover {
+    color: darkred;
+}
+
+.footer-platforms {
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+    color: white;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.platform-list {
+    display: flex;
+    gap: 25px;
+}
+
+.mature-sign img {
+    width: 200px;
+}
+ 
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.language-selector select {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    
+    font-size: 14px;
+    cursor: pointer;
+}
+.menu-toggle {
+    display: none;
+}
+.hamburger {
+    display: none;
+}
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        padding: 20px;
+        display: none;
+    }
+    .hero-content a, .hero-content button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .login-form {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
+    .purchase {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 350vh;
+    }
+    .game-box {
+        width: 90%;
+        flex-direction: column;
+        
+    }
+    .news-section {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .news-item {
+        width: 90%;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: sticky;
+        width: 100%;
+        height: 0px;
+        z-index: 1000;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 70px;
+    }
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        margin-top: 70px;
+    }
+    
+    .nav-left {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 68px;
+        left: 0;
+    }
+    .nav-right {
+        margin-top: 45px;
+        position: absolute;
+        left: 70%;
+        padding-top: 10px;
+    }
+    .menu-toggle:checked ~ .nav-left, .menu-toggle:checked ~ .nav-right {
+        display: flex;
+    }
+    
+    .nav-left li a, .nav-right li a {
+        padding: 15px;
+        font-size: 16px;
+        color: white;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero {
+        text-align: center;
+        margin-top: 70px;
+    }
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about, .page3, .page4, .page5 {
+        padding: 50px 10px;
+    }
+    .about-p1, .page3-p1, .about-p2, .page3-p2, .page4 p, .page5 p {
+        left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
