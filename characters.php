@@ -2,14 +2,14 @@
 session_start();
 
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
-    header("Location: LOST.php"); // redirect non-admins
+    header("Location: index.php"); // redirect non-admins
     exit();
 }
 ?>
 <?php
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=lost_db", 'root', 'spidermanlk7al');
+    require_once 'db.php';
 } catch (PDOException $e) {
     die("DB Connection failed: " . $e->getMessage());
 }
@@ -73,16 +73,16 @@ $edit_id = isset($_GET['edit']) ? $_GET['edit'] : null;
 <body>
 
 <header>
-        <div class="logo"><h2><a href="LOST.php">LOST</a></h2></div>
+        <div class="logo"><h2><a href="index.php">LOST</a></h2></div>
         <nav>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger">&#9776;</label>
         
             <ul class="nav-left">
-                <li><a href="LOST.php#about" id="header" class="btn">Overview</a></li>
-                <li><a href="LOST.php#cast" id="header1" class="btn">Cast</a></li>
-                <li><a href="LOST.php#news" id="header2" class="btn">News</a></li>
-                <li><a href="LOST.php#contact" id="header3" class="btn">Contact</a></li>
+                <li><a href="index.php#about" id="header" class="btn">Overview</a></li>
+                <li><a href="index.php#cast" id="header1" class="btn">Cast</a></li>
+                <li><a href="index.php#news" id="header2" class="btn">News</a></li>
+                <li><a href="index.php#contact" id="header3" class="btn">Contact</a></li>
             </ul>
             <ul class="nav-right">
 
@@ -117,8 +117,8 @@ $edit_id = isset($_GET['edit']) ? $_GET['edit'] : null;
                 
             }
         </script>
-                <li><a href="LOST.php#free-trial" id="header4" class="free" class="btn">Free Trial</a></li>
-                <li><a href="LOST.php#free-trial" id="header5" class="buy" class="btn">Buy Now</a></li>
+                <li><a href="index.php#free-trial" id="header4" class="free" class="btn">Free Trial</a></li>
+                <li><a href="index.php#free-trial" id="header5" class="buy" class="btn">Buy Now</a></li>
             </ul>
         </nav>
     </header>
@@ -149,9 +149,10 @@ $edit_id = isset($_GET['edit']) ? $_GET['edit'] : null;
         }
         body {
             background: linear-gradient(135deg, #000000,rgb(49, 0, 0),rgb(0, 0, 0));
+            background-attachment: fixed;
             color: #fff;
             font-family: 'Segoe UI', sans-serif;
-            height:362.5vh;
+            min-height: 125vh;
         }
 
         form input, select, button {

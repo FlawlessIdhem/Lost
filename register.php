@@ -5,8 +5,7 @@ $errors = [];
 $success = "";
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=lost_db", "root", "spidermanlk7al");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    require_once 'db.php';
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Get and sanitize inputs
@@ -41,7 +40,8 @@ try {
             $stmt = $pdo->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'user')");
             $stmt->execute([$username, $email, $hashedPassword]);
 
-            $success = "Account created! <a href='login.php'>Login here</a>";
+            header("Location: login.php");
+            exit();
         }
     }
 } catch (PDOException $e) {
@@ -59,16 +59,16 @@ try {
 </head>
 <body>
     <header>
-        <div class="logo"><h2><a href="LOST.php">LOST</a></h2></div>
+        <div class="logo"><h2><a href="index.php">LOST</a></h2></div>
         <nav>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger">&#9776;</label>
         
             <ul class="nav-left">
-                <li><a href="LOST.php#about" id="header" class="btn">Overview</a></li>
-                <li><a href="LOST.php#cast" id="header1" class="btn">Cast</a></li>
-                <li><a href="LOST.php#news" id="header2" class="btn">News</a></li>
-                <li><a href="LOST.php#contact" id="header3" class="btn">Contact</a></li>
+                <li><a href="index.php#about" id="header" class="btn">Overview</a></li>
+                <li><a href="index.php#cast" id="header1" class="btn">Cast</a></li>
+                <li><a href="index.php#news" id="header2" class="btn">News</a></li>
+                <li><a href="index.php#contact" id="header3" class="btn">Contact</a></li>
             </ul>
             <ul class="nav-right">
             
@@ -104,32 +104,24 @@ try {
                 window.location.href = "logout.php";
             }
         </script>
-                <li><a href="LOST.php#free-trial" id="header4" class="free2" class="btn">Free Trial</a></li>
-                <li><a href="LOST.php#free-trial" id="header5" class="buy2" class="btn">Buy Now</a></li>
+                <li><a href="index.php#free-trial" id="header4" class="free2" class="btn">Free Trial</a></li>
+                <li><a href="index.php#free-trial" id="header5" class="buy2" class="btn">Buy Now</a></li>
             </ul>
         </nav>
     </header>
     <section id="home" class="regpage">
-        <!-- Show Errors -->
-         
-   <?php if (!empty($errors)): ?>
-    <div class="error">
-        <ul>
-            <?php foreach ($errors as $err): ?>
-                <li><?= htmlspecialchars($err) ?></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endif; ?>
-
-<?php if ($success): ?>
-    <div class="success"><?= $success ?></div>
-<?php endif; ?>
-
-
-            <div class="login-form">
-        <h2 id="login">Register</h2>
-        <form action="login.php" method="POST">
+        <div class="login-form">
+            <h2 id="login">Register</h2>
+            <?php if (!empty($errors)): ?>
+                <div class="error-message">
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <?php foreach ($errors as $err): ?>
+                            <li><?= htmlspecialchars($err) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+        <form action="register.php" method="POST">
             <div class="input-field">
                 <input type="text" name="username" required>
                 <label id="enter_username">Username</label>
@@ -153,8 +145,6 @@ try {
                 </label>
             </div>
             <button type="submit" id="log_in">Create an account</button>
-
-            </div>
         </form>
     </div>
     </section>
